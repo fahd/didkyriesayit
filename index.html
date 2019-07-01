@@ -4,24 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/style.css">
+  <meta content="Did Kyrie Say It? A quiz to determine how woke you are." name="description">
+  <meta content="Did Kyrie Say It? A quiz to determine how woke you are." property="og:description">
+  <meta content="summary" name="twitter:card">
+  <meta content="./public/img/meta-cover.png" property="og:image">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mansquiet">
+  <meta name="twitter:title" content="mansquiet">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.didkyriesayit.com/">
+  <meta property="og:site_name" content="Did Kyrie Say It?">
+  <link rel="stylesheet" href="./dist/styles.css">
   <title>Did Kyrie Say It?</title>
 </head>
 <body>
-  <h1>bruh</h1>
+  <div class='container'>
+    <div class="cover-image"></div>
+    <div class="cover-gradient"></div>
+    <div class="content">
+      <div class="meta">
+          <!-- Starter -->
+        <div class="intro">
+          <img class='kyrie-cover' src="https://didkyriesayit.s3.us-east-2.amazonaws.com/Kyrie.png" alt="Kyrie Irving Thinking About Some Shit">
+          <h1 class='type title'>Did Kyrie Say It?</h1>
+          <span class='type subtitle'>Let's see how woke you really are and predict if these quotes came from Kyrie or not.</span>
+          <div class="start">
+              <button class="btn type startQuiz">Start Quiz 👉</button>
+            </div>
+        </div>
+
+        <!-- Quotes -->
+        <div class="responses">
+          <div class="responses-meta">
+            <span class='type title responses-title'>Did Kyrie Say It?</span>
+          </div>
+          <span class='progress'></span>
+          <div class="answer-results"></div>
+          <div class="questionContainer">
+            <div class="quoteList"></div>
+            <img class='kyrie-cover responses-cover' src="https://didkyriesayit.s3.us-east-2.amazonaws.com/Kyrie.png" alt="Kyrie Irving Thinking About Some Shit">
+            <div class='answer'>
+                <div class="answer-choices">
+                    <button class="btn type btn-answer btn-yes">Yes, he said it. 👍</button>
+                    <button class="btn type btn-answer btn-no">No, he didn't. 👎</button>
+                </div>
+            </div>
+          </div>
+
+          <!-- Answer Result -->
+          <div class="resultContainer">
+            
+            <div class='answerBool'>
+                <span class='answer-text'></span>
+            </div>
+
+            <div class='questionSource-container'>
+              <img class='response-image' src="" alt=""/>
+              <span class='actual-author'></span>
+              <div class="questionSource-stats">
+                <span class='answerStats'></span>
+                <span class='question-source'><a target="blank" class='question-source-link' href="">(quote source)</a></span>
+              </div>
+            </div>
+            
+
+            <!--  Optional Rate -->
+            <div class="rateQuestion">
+              <div class="btn-rateQuestionContainer">
+                <button class='btn-rate'>easy</button>
+                <button class='btn-rate'>medium</button>
+                <button class='btn-rate'>hard</button>
+              </div>
+              <label class="optional">(optional) rate this question</label>
+            </div>
+
+            <!--  Next Question -->
+            <div class="nextQuestion">
+              <button class="btn type btn-answer btn-next">Next Question</button>
+            </div>
+          </div>
+
+          <div class="finalResults-container">
+            <div class='finalResults'>
+               <div class='score-container'>
+                <span class='score-title'>You scored:</span>
+                <span class='score'></span>
+
+              </div>
+              <div class="finalResults-reaction">
+                <span class="finalResults-emoji"></span>
+                <span class="finalResults-text"></span>
+                <div>
+                    <button class='btn-rate btn-finish' onclick="window.location.reload()">Try Again</button>
+                </div>
+                <div class="social-buttons">
+                  <a target="blank" href="" class='btn-social btn-twitter'>Tweet</a>
+                  <a target="blank" href="" class='btn-social btn-facebook'>Share</a>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- unminified -->
-  <script
+  <!-- <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
   
   <!-- minified -->
-  <!-- <script
+  <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-   -->
+  
   <!-- client js -->
   <script src="./public/client/main.js"></script>
 </body>

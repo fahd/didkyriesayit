@@ -5,5 +5,5 @@ const Response = QuoteSchemas.response;
 
 module.exports = {
   question: crudControllers(Question),
-  response: crudControllers(Response)
+  response: crudControllers(Question, Response)
 }
