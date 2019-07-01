@@ -1,16 +1,15 @@
 require('dotenv').config();
 
-const { merge } = require('lodash');
 const env = process.env.NODE_ENV || 'development';
+const { merge } = require('lodash');
 const devConfig = require('./dev');
 const prodConfig = require('./prod');
-
 
 const baseConfig = {
   env,
   isDev: env === 'development',
   isTest: env === 'testing',
-  port: process.env.PORT || 3001,
+  port: env === 'production' ? process.env.PORT : 3001,
   secrets: {
     jwt: process.env.JWT_SECRET,
     jwtExp: '100d'
@@ -29,7 +28,5 @@ switch (env) {
   default:
     envConfig = devConfig;
 }
-
-console.log('envConfig',envConfig)
 
 module.exports = merge(baseConfig, envConfig);

@@ -1,5 +1,4 @@
 const _ = require('lodash');
-const mongoose = require('mongoose');
 
 const createOne = model => async (req,res) => {
   try {
