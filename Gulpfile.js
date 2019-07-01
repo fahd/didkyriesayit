@@ -15,9 +15,7 @@ function minifyCss(){
 
 function js() {
   return gulp.src(['public/client/main.js'])
-    .pipe(babel({ presets: ['es2015'] }))
-    // .pipe(concat('main.js'))
-    .pipe(uglify())
+    .pipe(concat('main.js'))
     .pipe(gulp.dest('dist'));
 }
 
@@ -32,4 +30,5 @@ gulp.task('js', js);
 gulp.task('watch', watch);
 
 // Default Task
-gulp.task('default', gulp.series(minifyCss,js,watch));
+gulp.task('default', gulp.series(minifyCss,js));
+gulp.task('watch', gulp.series(minifyCss,js,watch));

@@ -316,6 +316,7 @@ body {
   padding: 0.5em 1em; 
   font-size: 1em;
   color: #bfbfbf;
+  background: #fff;
   border: 2px solid #e8e8e8;
   margin: 0 0.5em;
   cursor: pointer;
@@ -370,7 +371,7 @@ body {
 .btn-twitter::before {
   content:" ";
   display: block;
-  background-image: url('public/img/social/twitter-color.svg');
+  background-image: url('/public/img/social/twitter-color.svg');
   background-size: 1em 1em;
   height: 1em;
   width: 1em;
@@ -378,7 +379,7 @@ body {
 }
 
 .btn-twitter:hover::before{
-  background-image: url('public/img/social/twitter-white.svg');
+  background-image: url('/public/img/social/twitter-white.svg');
 }
 
 .btn-facebook {
@@ -389,7 +390,7 @@ body {
 .btn-facebook::before {
   content:" ";
   display: block;
-  background-image: url('public/img/social/facebook-color.svg');
+  background-image: url('/public/img/social/facebook-color.svg');
   background-size: 1em 1em;
   height: 1em;
   width: 1em;
@@ -401,7 +402,7 @@ body {
   background: #3b5998;
 }
 .btn-facebook:hover::before{
-  background-image: url('public/img/social/facebook-white.svg');
+  background-image: url('/public/img/social/facebook-white.svg');
 }
 
 

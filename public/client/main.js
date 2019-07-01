@@ -10,7 +10,7 @@ var answeredCorrectly;
 var redditRegex = /reddit/g;
 
 // Request Quotes
-$.get("http://localhost:3000/api/quotes", function (data, status){
+$.get("http://localhost:3001/api/quotes", function (data, status){
   quotes = data.quotes;
 
   for (var i = 0; i < quotes.length; i++ ){
@@ -27,7 +27,7 @@ $.get("http://localhost:3000/api/quotes", function (data, status){
 /*****  Helper Functions  *******/
 
 var getAnswerStats = questionId => {
-  return $.get(`http://localhost:3000/api/quotes/answerStats/${questionId}`,function(data,status){});
+  return $.get(`http://localhost:3001/api/quotes/answerStats/${questionId}`,function(data,status){});
 }
 
 var determineEmoji = score => {
@@ -38,13 +38,13 @@ var determineEmoji = score => {
     
     if (score === 100){
       o.emoji = '😎'
-      o.text = 'W O K E A F'
+      o.text = '👂👁W O K E A F 👁👂'
       return o;
     }
     
     else if (score > 90){
       o.emoji = '😀'
-      o.text = "real recognize real, and you're kinda familiar"
+      o.text = "real recognize real, you looking real familiar"
       return o;
     }
     
@@ -97,8 +97,8 @@ var determineEmoji = score => {
     }
     
     else if (score > 0){
-      o.emoji = '🤮'
-      o.text = "you are a complete trash of a human, and a blight upon society."
+      o.emoji = '😴'
+      o.text = "NOT WOKE wake TF UP you sheep!"
       return o;
     }
 }
@@ -111,7 +111,7 @@ var submitAnswer = () => {
     questionRespondedCorrectly:answeredCorrectly
   };
 
-  $.post('http://localhost:3000/api/quotes/answer', data);
+  $.post('http://localhost:3001/api/quotes/answer', data);
 
   answeredCorrectly='';
   activeRating = 0;
@@ -163,9 +163,10 @@ var btnAnswer = async bool => {
   var isYes = bool === 'yes' ? true : false;
   var questionAnswered = answerQuestion(activeQuote);
   var answerStats = await getAnswerStats(questionAnswered._id);
+
   var percentage = answerStats.data ? answerStats.data : 0;
   if (percentage){
-    $(".answerStats").text(`${percentage}% got this correct.`).show()
+    $(".answerStats").text(`${percentage}% of other people got this correct.`).show();
   }
 
   if (activeQuestionIdx === quotes.length - 1) $('.btn-next').text('Finish! 💪')
@@ -263,8 +264,6 @@ var btnAnswer = async bool => {
 $('.btn-next').click((e) => {
   e.preventDefault();
 
-  submitAnswer()
-
   var quoteLen = quotes.length;
   let quoteDivs = $('.quoteList').children();
 
@@ -273,6 +272,7 @@ $('.btn-next').click((e) => {
   activeQuote = quotes[activeQuestionIdx];
 
   if (activeQuestionIdx < quoteLen) {
+    submitAnswer()
     changeProgressNumber();
     $('.resultContainer').fadeOut('fast',function(){
       $(".answer-text").text('');
@@ -285,8 +285,6 @@ $('.btn-next').click((e) => {
       $('.response-image').show();
     })
 
-
-    
     $(quoteDivs[activeQuestionIdx]).addClass('active');
   } else {
     var scoreOutcome;
@@ -298,7 +296,7 @@ $('.btn-next').click((e) => {
       var fbURL = `https://www.facebook.com/sharer/sharer.php?u=http://www.didkyriesayit.com&t=I%20scored%20${correctCount}/${quotes.length}%20on%20"Did%20Kyrie%20Say%20It?`
       $('.btn-twitter').attr('href',twitterURL);
       $('.btn-facebook').attr('href',fbURL).click(e=>{
-        window.open(url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+        window.open(fbURL, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
       });
 
       $(".score").text(`${correctCount}/${quotes.length}`);
