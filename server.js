@@ -1,4 +1,6 @@
 const express = require('express')
+const fs = require('fs');
+const https = require('https');
 const path = require('path');
 const bodyparser = require('body-parser');
 const { json, urlencoded } = bodyparser;
@@ -7,7 +9,6 @@ const cors = require('cors')
 const connect = require('./server/utils/db')
 const quoteRouter = require('./server/resources/quote/quote.router');
 const app = express()
-
 
 // const { signup, signin, protect } =require('./utils/auth')
 
@@ -30,8 +31,11 @@ app.use('/api/quotes', quoteRouter);
 
 const start = async () => {
   try {
-    await connect()
-    app.listen(config.port, () => {
+    await connect();
+    https.createServer({
+        key: fs.readFileSync('server.key'),
+        cert: fs.readFileSync('server.cert')
+      },app).listen(config.port, () => {
       console.log(`Listening on port ${config.port}`)
     })
   } catch (e) {

@@ -7,8 +7,6 @@ const {
 } = controllers;
 const router = Router();
 
-
-
 router
 .route('/')
 .get(question.getMany)
