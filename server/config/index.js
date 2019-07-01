@@ -18,7 +18,7 @@ const baseConfig = {
 
 let envConfig = {}
 
-console.log('envConfig',envConfig)
+
 
 switch (env) {
   case 'production':
@@ -30,5 +30,7 @@ switch (env) {
   default:
     envConfig = devConfig;
 }
+
+console.log('envConfig',envConfig)
 
 module.exports = merge(baseConfig, envConfig);
