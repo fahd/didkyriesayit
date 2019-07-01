@@ -2,10 +2,10 @@ const express = require('express')
 const path = require('path');
 const bodyparser = require('body-parser');
 const { json, urlencoded } = bodyparser;
-const config = require('./config')
+const config = require('./server/config')
 const cors = require('cors')
-const connect = require('./utils/db')
-const quoteRouter = require('./resources/quote/quote.router');
+const connect = require('./server/utils/db')
+const quoteRouter = require('./server/resources/quote/quote.router');
 const app = express()
 
 
@@ -15,13 +15,13 @@ app.disable('x-powered-by')
 app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }))
-app.use('/public',express.static((path.join(__dirname, '../public'))))
-app.use('/dist',express.static((path.join(__dirname, '../dist'))))
+app.use('/public',express.static((path.join(__dirname, './public'))))
+app.use('/dist',express.static((path.join(__dirname, './dist'))))
 
 // Serve static home file
 app.get('/',(req,res) => {
   res.status(200);
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.use('/api/quotes', quoteRouter);

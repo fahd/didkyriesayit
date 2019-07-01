@@ -2,10 +2,10 @@
   "name": "did-kyrie-say-it",
   "version": "1.0.0",
   "description": "did kyrie say this dumb shit",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js",
+    "start": "nodemon server.js",
     "dev": "export NODE_ENV=development && npm start",
     "prod": "export NODE_ENV=production && npm start",
     "build": "gulp"
