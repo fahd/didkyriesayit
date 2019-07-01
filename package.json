@@ -8,7 +8,7 @@
     "start": "nodemon server.js",
     "dev": "export NODE_ENV=development && npm start",
     "prod": "export NODE_ENV=production && npm start",
-    "build": "gulp"
+    "build": "npm install && gulp"
   },
   "keywords": [
     "flat",
