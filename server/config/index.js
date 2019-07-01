@@ -18,6 +18,8 @@ const baseConfig = {
 
 let envConfig = {}
 
+console.log('envConfig',envConfig)
+
 switch (env) {
   case 'production':
     envConfig = prodConfig;
