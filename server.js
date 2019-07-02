@@ -17,8 +17,8 @@ app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }))
 
-app.use(express.static((path.join(__dirname))))
 app.use('/api/quotes', quoteRouter);
+app.use(express.static((path.join(__dirname))))
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,10 +50,11 @@ const start = async () => {
     })
     .catch( (err) => console.error('mongodb error',err));
     
-    https.createServer({
-        key: fs.readFileSync('server.key'),
-        cert: fs.readFileSync('server.cert')
-      },app).listen(config.port, () => {
+    // https.createServer({
+    //     key: fs.readFileSync('server.key'),
+    //     cert: fs.readFileSync('server.cert')
+    //   },
+    app.listen(config.port, () => {
       console.log(`Listening on port ${config.port}`)
     })
   } catch (e) {
