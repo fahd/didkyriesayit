@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:prod" : "export NODE_ENV=production && node server.js",
+    "start:prod": "export NODE_ENV=production && node server.js",
     "start": "nodemon server.js",
     "dev": "export NODE_ENV=development && gulp && npm start",
     "prod": "export NODE_ENV=production",
@@ -18,20 +18,20 @@
   "author": "fahdmansa",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.4.5",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.11",
-    "mongoose": "^5.6.1",
-    "nodemon": "^1.19.1",
-    "@babel/core": "^7.4.5",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.1",
+    "nodemon": "^1.19.1"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

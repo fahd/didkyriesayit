@@ -30,7 +30,7 @@ switch (env) {
   default:
     envConfig = devConfig;
 }
-
+console.log('env',env)
 console.log('envConfig',envConfig)
 
 module.exports = merge(baseConfig, envConfig);
