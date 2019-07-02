@@ -16,8 +16,8 @@ app.disable('x-powered-by')
 app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }))
-app.use('/public',express.static((path.join(__dirname, './public'))))
-app.use('/dist',express.static((path.join(__dirname, './dist'))))
+
+app.use(express.static((path.join(__dirname))))
 
 // Serve static home file
 app.get('/',(req,res) => {

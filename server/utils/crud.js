@@ -81,6 +81,7 @@ const getResponseStats = Response => async (req,res) => {
 }
 
 const getMany = model => async (req,res) => {
+  console.log('req',req.body);
   const amountTrue = Math.max(5, Math.ceil(Math.random() * 6));
   const amountFalse = 12 - amountTrue;
 
