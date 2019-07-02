@@ -10,7 +10,7 @@ var answeredCorrectly;
 var redditRegex = /reddit/g;
 
 // Request Quotes
-$.get("api/quotes", function (data, status){
+$.get("/api/quotes", function (data, status){
   quotes = data.quotes;
 
   for (var i = 0; i < quotes.length; i++ ){
@@ -23,11 +23,14 @@ $.get("api/quotes", function (data, status){
     )
   }
 })
+.fail(function (xhr, textStatus, errorThrown) {
+  console.log('Ajax error', textStatus, errorThrown);
+});
 
 /*****  Helper Functions  *******/
 
 var getAnswerStats = questionId => {
-  return $.get(`api/quotes/answerStats/${questionId}`,function(data,status){});
+  return $.get(`/api/quotes/answerStats/${questionId}`,function(data,status){});
 }
 
 var determineEmoji = score => {
@@ -111,7 +114,7 @@ var submitAnswer = () => {
     questionRespondedCorrectly:answeredCorrectly
   };
 
-  $.post('api/quotes/answer', data);
+  $.post('/api/quotes/answer', data);
 
   answeredCorrectly='';
   activeRating = 0;
