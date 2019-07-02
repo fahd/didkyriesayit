@@ -31,7 +31,12 @@ app.use('/api/quotes', quoteRouter);
 
 const start = async () => {
   try {
-    await connect();
+    await connect()
+    .then( () => {
+      console.log('Connection to the Atlas Cluster is successful!')
+    })
+    .catch( (err) => console.error('mongodb error',err));
+    
     https.createServer({
         key: fs.readFileSync('server.key'),
         cert: fs.readFileSync('server.cert')
