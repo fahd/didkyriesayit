@@ -18,15 +18,13 @@ app.use(json());
 app.use(urlencoded({ extended: true }))
 
 app.use(express.static((path.join(__dirname))))
+app.use('/api/quotes', quoteRouter);
 
 // Serve static home file
 app.get('/',(req,res) => {
   res.status(200);
   res.sendFile(path.join(__dirname, './index.html'));
 });
-
-app.use('/api/quotes', quoteRouter);
-
 // app.use('/api', protect)
 
 const start = async () => {
