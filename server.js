@@ -1,6 +1,4 @@
 const express = require('express')
-const fs = require('fs');
-const https = require('https');
 const path = require('path');
 const bodyparser = require('body-parser');
 const { json, urlencoded } = bodyparser;
@@ -9,8 +7,6 @@ const cors = require('cors')
 const connect = require('./server/utils/db')
 const quoteRouter = require('./server/resources/quote/quote.router');
 const app = express()
-
-// const { signup, signin, protect } =require('./utils/auth')
 
 app.disable('x-powered-by')
 app.use(cors());
@@ -33,14 +29,11 @@ app.use(function (req, res, next) {
   }
 });
 
-console.log('here')
-
 // Serve static home file
 app.get('/',(req,res) => {
   res.status(200);
   res.sendFile(path.join(__dirname, './index.html'));
 });
-// app.use('/api', protect)
 
 const start = async () => {
   try {
@@ -50,10 +43,6 @@ const start = async () => {
     })
     .catch( (err) => console.error('mongodb error',err));
     
-    // https.createServer({
-    //     key: fs.readFileSync('server.key'),
-    //     cert: fs.readFileSync('server.cert')
-    //   },
     app.listen(config.port, () => {
       console.log(`Listening on port ${config.port}`)
     })
