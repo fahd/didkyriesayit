@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const options = require('../config');
 
-const connect = (url = options.dbUrl, opts = {}) => {
-  console.log('mongoose url',typeof url, url)
+const connect = (uri = options.dbUrl, opts = {}) => {
+  console.log('options',options);
   return mongoose.connect(
-    url,
-    { ...opts, useNewUrlParser: true }
+    uri,
+    { dbName: options.dbName, useNewUrlParser: true }
   )
 }
 
