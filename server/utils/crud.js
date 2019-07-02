@@ -5,10 +5,10 @@ const createOne = model => async (req,res) => {
     const doc = await model.create({
       ...req.body
     });
-    res.status(201).json({data:doc})
+    return res.status(201).json({data:doc})
   } catch (e){
       console.error('error',e);
-      res.status(400).end()
+      return res.status(400).end()
   }
 }
 
@@ -20,7 +20,7 @@ const getResponses = (Question, Response) => async (req,res) => {
   .lean()
   .exec()
 
-  res.status(201).json({data:responses})
+  return res.status(201).json({data:responses})
 }
 
 const createResponse = (Question, Response) => async (req,res) => {
@@ -49,7 +49,7 @@ const createResponse = (Question, Response) => async (req,res) => {
       });
     });
 
-    res.json({data:quote})
+    return res.json({data:quote})
 
   } catch (e){
       console.error('error creating response',e);
@@ -77,7 +77,7 @@ const getResponseStats = Response => async (req,res) => {
   .lean()
   .exec()
 
-  res.status(201).send({data:Math.floor(correctCount/count*100)});
+  return res.status(201).send({data:Math.floor(correctCount/count*100)});
 }
 
 const getMany = model => async (req,res) => {
@@ -108,11 +108,11 @@ const getMany = model => async (req,res) => {
 
     const quotes = _.shuffle([...quotesByKyrie, ...notQuotesByKyrie])
     
-    res.status(200).json({quotes, len:quotes.length});
+    return res.status(200).json({quotes, len:quotes.length});
 
   } catch (e){
     console.error('getting many', e);
-    res.status(400).end();
+    return res.status(400).end();
   }
 }
 
@@ -124,11 +124,11 @@ const getOne = model => async (req,res) => {
     .lean()
     .exec()
 
-    res.status(200).json({data:doc})
+    return res.status(200).json({data:doc})
 
   } catch (e){
     console.error('error in get one', e);
-    res.status(400).end();
+    return res.status(400).end();
   }
 }
 
