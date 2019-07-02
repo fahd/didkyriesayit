@@ -10,7 +10,7 @@ const baseConfig = {
   dbName: process.env.DB_NAME || 'kyrie',
   isDev: env === 'development',
   isTest: env === 'testing',
-  port: env === 'production' ? process.env.PORT : 3001,
+  port: env === 'production' ? process.env.PORT : 25382,
   secrets: {
     jwt: process.env.JWT_SECRET,
     jwtExp: '100d'
