@@ -19,6 +19,18 @@ app.use(urlencoded({ extended: true }))
 
 app.use(express.static((path.join(__dirname))))
 app.use('/api/quotes', quoteRouter);
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
 // Serve static home file
 app.get('/',(req,res) => {
