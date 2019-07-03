@@ -438,6 +438,19 @@ body {
   font-family: 'Caslon';
   color: #3a3a3a;
 }
+.sub {
+  display: flex;
+  flex-direction: column
+}
+.lars {
+  margin-top: 1em;
+  font-size: 1em;
+  color: #a9a9a9;
+}
+
+.lars-auth {
+  text-decoration: underline;
+}
 
 .progress {
   position: absolute;
