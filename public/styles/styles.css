@@ -516,6 +516,13 @@ body {
 }
 
 @media (max-width: 576px) { 
+  .quote {
+    font-size: 1.5em;
+  }
+  
+  .questionSource-stats {
+    flex-direction: column;
+  }
 
   .finalResults-text {
     font-size: 1.5em;
