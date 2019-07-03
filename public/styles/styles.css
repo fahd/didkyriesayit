@@ -446,6 +446,7 @@ body {
   margin-top: 1em;
   font-size: 1em;
   color: #a9a9a9;
+  text-decoration: none;
 }
 
 .lars-auth {
