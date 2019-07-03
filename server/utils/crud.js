@@ -81,8 +81,8 @@ const getResponseStats = Response => async (req,res) => {
 }
 
 const getMany = model => async (req,res) => {
-  const amountTrue = Math.max(5, Math.ceil(Math.random() * 6));
-  const amountFalse = 12 - amountTrue;
+  const amountTrue = Math.max(7, Math.ceil(Math.random() * 8));
+  const amountFalse = 15 - amountTrue;
 
   try {
     // const quotesByKyrieCount = await model
