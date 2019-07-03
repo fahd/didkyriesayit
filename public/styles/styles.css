@@ -552,6 +552,10 @@ body {
 
 @media (max-width: 576px) { 
 
+  .lars {
+    font-size: 1em;
+  }
+
   .responses-cover {
     margin-top: 0;
     max-width: 50px;
