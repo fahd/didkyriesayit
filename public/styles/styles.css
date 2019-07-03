@@ -519,7 +519,7 @@ body {
   .quote {
     font-size: 1.5em;
   }
-  
+
   .questionSource-stats {
     flex-direction: column;
   }
@@ -569,6 +569,10 @@ body {
 
 }
 @media (max-width: 374px) { 
+
+  .quote {
+    font-size: 1.25em;
+  }
 
   .title {
     font-size: 1.5em;
