@@ -295,9 +295,9 @@ $('.btn-next').click((e) => {
     scoreOutcome = determineEmoji(scorePercentage);
 
     $('.resultContainer').fadeOut('fast',function(){
-      var twitterURL = `https://twitter.com/intent/tweet?url=http://www.didkyriesayit.com&via=mansquiet&text=I%20scored%20${correctCount}/${quotes.length}%20on%20"Did%20Kyrie%20Say%20It?"`
+      // var twitterURL = `https://twitter.com/intent/tweet?url=http://www.didkyriesayit.com&via=mansquiet&text=I%20scored%20${correctCount}/${quotes.length}%20on%20"Did%20Kyrie%20Say%20It?"`
       var fbURL = `https://www.facebook.com/sharer/sharer.php?u=http://www.didkyriesayit.com&t=I%20scored%20${correctCount}/${quotes.length}%20on%20"Did%20Kyrie%20Say%20It?`
-      $('.btn-twitter').attr('href',twitterURL);
+      // $('.btn-twitter').attr('href',twitterURL);
       $('.btn-facebook').attr('href',fbURL).click(e=>{
         window.open(fbURL, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
       });

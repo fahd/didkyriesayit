@@ -126,6 +126,8 @@ body {
 }
 
 .social-buttons {
+  display: flex;
+  flex-direction: column;
   margin-top: 1em;
   display: flex;
 }
@@ -266,7 +268,22 @@ body {
 }
 
 .score {
-  font-size: 5em;
+  font-size: 4em;
+}
+
+.twitter-author {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-size: 0.8em;
+  font-family: 'Circular Book';
+  text-decoration: underline;
+}
+
+.twitter-author,
+.twitter-author:hover,
+.twitter-author:visited {
+  color: #a9a9a9;
 }
 
 
@@ -342,7 +359,6 @@ body {
 }
 
 .btn-social {
-  text-transform: capitalize;
   outline: none;
   border-radius: 0.5em;
   padding: 0.5em 1em; 
@@ -385,6 +401,7 @@ body {
 .btn-facebook {
   color: #3b5998;
   border-color: #3b5998;
+  margin-top: 0.5em;
 }
 
 .btn-facebook::before {
@@ -410,6 +427,10 @@ body {
   cursor: pointer;
 }
 
+.responses-title {
+  font-size: 2em;
+}
+
 /* End Buttons */
 
 .question-source {
@@ -421,7 +442,7 @@ body {
 .progress {
   position: absolute;
   top: 1em;
-  right: 1em;
+  right: 0.5em;
   font-family: 'Circular Book';
   color: #b7b7b7;
 }
@@ -429,7 +450,7 @@ body {
 .answer-results {
   position: absolute;
   top: 2em;
-  right: 1em;
+  right: 0.5em;
   display: flex;
   flex-direction: column;
 }
