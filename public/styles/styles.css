@@ -517,6 +517,11 @@ body {
 
 @media (max-width: 576px) { 
 
+  .responses-cover {
+    margin-top: 0;
+    max-width: 50px;
+  }
+
   .questionSource-stats {
     flex-direction: column;
   }
