@@ -189,7 +189,6 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
       $('.questionContainer').fadeOut('fast',function(){
         $(".resultContainer").fadeIn('fast');
-        $('.btn-answer').attr('disabled', false);
       })
     }
 
@@ -206,7 +205,6 @@ var btnAnswer = async bool => {
     
       $('.questionContainer').fadeOut('fast',function(){
         $(".resultContainer").fadeIn('fast');
-        $('.btn-answer').attr('disabled', false);
       })
     }
   }
@@ -235,7 +233,6 @@ var btnAnswer = async bool => {
 
       $('.questionContainer').fadeOut('fast',function(){
         $(".resultContainer").fadeIn('fast');
-        $('.btn-answer').attr('disabled', false);
       })
     }
 
@@ -259,7 +256,6 @@ var btnAnswer = async bool => {
 
       $('.questionContainer').fadeOut('fast',function(){
         $(".resultContainer").fadeIn('fast');
-        $('.btn-answer').attr('disabled', false);
       })
     }
   }
@@ -269,9 +265,7 @@ var btnAnswer = async bool => {
 
 // Next Question
 $('.btn-next').click((e) => {
-  e.stopImmediatePropagation();
   e.preventDefault();
-  $('.btn-next').attr('disabled', true);
 
   var quoteLen = quotes.length;
   let quoteDivs = $('.quoteList').children();
@@ -284,7 +278,6 @@ $('.btn-next').click((e) => {
     submitAnswer()
     changeProgressNumber();
     $('.resultContainer').fadeOut('fast',function(){
-      $('.btn-next').attr('disabled', false);
       $(".answer-text").text('');
       $(".answerStats").hide();
       $('.actual-author').removeClass('huge');
@@ -346,16 +339,12 @@ $('.startQuiz').click(function(e){
 
 // Select Yes
 $('.btn-yes').click(function(e){
-  $('.btn-answer').attr('disabled', true);
-  e.stopImmediatePropagation();
   e.preventDefault();
   btnAnswer('yes');
 })
 
 // Select No
 $('.btn-no').click(function(e){
-  $('.btn-answer').attr('disabled', true);
-  e.stopImmediatePropagation();
   e.preventDefault();
   btnAnswer('no')
 })
