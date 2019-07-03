@@ -169,12 +169,12 @@ var btnAnswer = async bool => {
 
   var isYes = bool === 'yes' ? true : false;
   var questionAnswered = answerQuestion(activeQuote);
-  var answerStats = await getAnswerStats(questionAnswered._id);
+  // var answerStats = await getAnswerStats(questionAnswered._id);
 
-  var percentage = answerStats.data ? answerStats.data : 0;
-  if (percentage){
-    $(".answerStats").text(`${percentage}% of other people got this correct.`).show();
-  }
+  // var percentage = answerStats.data ? answerStats.data : 0;
+  // if (percentage){
+  //   $(".answerStats").text(`${percentage}% of other people got this correct.`).show();
+  // }
 
   if (activeQuestionIdx === quotes.length - 1) $('.btn-next').text('Finish! 💪')
   
