@@ -188,6 +188,7 @@ var btnAnswer = async bool => {
       $(".response-image").attr('src','https://didkyriesayit.s3.us-east-2.amazonaws.com/Kyrie+Thumbs+Up.jpg');
       $('.question-source-link').attr('href',questionAnswered.source);
       $('.questionContainer').fadeOut('fast',function(){
+        $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
       })
     }
@@ -204,6 +205,7 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
     
       $('.questionContainer').fadeOut('fast',function(){
+        $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
       })
     }
@@ -232,6 +234,7 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
 
       $('.questionContainer').fadeOut('fast',function(){
+        $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
       })
     }
@@ -255,6 +258,7 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
 
       $('.questionContainer').fadeOut('fast',function(){
+        $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
       })
     }
@@ -266,6 +270,7 @@ var btnAnswer = async bool => {
 // Next Question
 $('.btn-next').click((e) => {
   e.preventDefault();
+  $('.btn-next').attr('disabled', true);
 
   var quoteLen = quotes.length;
   let quoteDivs = $('.quoteList').children();
@@ -278,6 +283,7 @@ $('.btn-next').click((e) => {
     submitAnswer()
     changeProgressNumber();
     $('.resultContainer').fadeOut('fast',function(){
+      $('.btn-next').attr('disabled', false);
       $(".answer-text").text('');
       $(".answerStats").hide();
       $('.actual-author').removeClass('huge');
@@ -340,11 +346,13 @@ $('.startQuiz').click(function(e){
 // Select Yes
 $('.btn-yes').click(function(e){
   e.preventDefault();
+  $('.btn-answer').attr('disabled', true);
   btnAnswer('yes');
 })
 
 // Select No
 $('.btn-no').click(function(e){
   e.preventDefault();
+  $('.btn-answer').attr('disabled', true);
   btnAnswer('no')
 })
