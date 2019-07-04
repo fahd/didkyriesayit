@@ -657,9 +657,8 @@ body {
   }
 
 }
-
 .lds-default {
-  display: inline-block;
+  display: none;
   position: relative;
   width: 64px;
   height: 64px;

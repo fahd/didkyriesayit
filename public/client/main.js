@@ -164,7 +164,10 @@ var answerQuestion = (quoteData) => {
 
 var btnAnswer = async bool => {
   $('.btn-answer').hide();
+        $('.lds-default').show()
   $('.lds-default div').show()
+
+
 
 
   var isYes = bool === 'yes' ? true : false;
@@ -192,7 +195,9 @@ var btnAnswer = async bool => {
       $(".response-image").attr('src','https://didkyriesayit.s3.us-east-2.amazonaws.com/Kyrie+Thumbs+Up.jpg');
       $('.question-source-link').attr('href',questionAnswered.source);
       $('.questionContainer').fadeOut('fast',function(){
+          $('.lds-default').show()
         $('.lds-default div').hide();
+
         $('.btn-answer').show();
         $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
@@ -211,7 +216,9 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
     
       $('.questionContainer').fadeOut('fast',function(){
+    $('.lds-default').show()
         $('.lds-default div').hide();
+
         $('.btn-answer').show();
         $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
@@ -242,7 +249,9 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
 
       $('.questionContainer').fadeOut('fast',function(){
+    $('.lds-default').show()
         $('.lds-default div').hide();
+
         $('.btn-answer').show();
         $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
@@ -268,7 +277,9 @@ var btnAnswer = async bool => {
       $('.question-source-link').attr('href',questionAnswered.source);
 
       $('.questionContainer').fadeOut('fast',function(){
+    $('.lds-default').show()
         $('.lds-default div').hide();
+
         $('.btn-answer').show();
         $('.btn-answer').attr('disabled', false);
         $(".resultContainer").fadeIn('fast');
