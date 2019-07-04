@@ -552,6 +552,18 @@ body {
 
 @media (max-width: 576px) { 
 
+  .response-image {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+    margin: 0;
+  }
+
   .lars {
     font-size: 1em;
   }
@@ -588,16 +600,13 @@ body {
   }
 
   .btn {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .startQuiz {
     font-size: 24px;
   }
 
-  .content {
-    min-height: 600px;
-  }
   
   .answer-choices {
     flex-direction: column;
@@ -605,7 +614,7 @@ body {
   }
 
   .btn-no {
-    margin-left: 0;
+    margin-left: 1em;
     margin-top: 1em;
   }
 
